@@ -2,7 +2,7 @@
   "name": "patch-business-name",
   "version": "1.0.0",
   "description": "actualizacion-patch-business-name",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app/app.js",
     "build": "tsc",
