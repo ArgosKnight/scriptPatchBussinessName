@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateCompanyBusinessName = void 0;
 async function updateCompanyBusinessName(aricoreDb, companyId, businessName) {
-    const company = await aricoreDb.collection('companies').findOne({ _id: companyId });
+    const company = await aricoreDb.collection('companies').findOne({ _id: companyId }, { projection: { _id: 1, status: 1 } });
     if (!company) {
         throw new Error(`ERROR 404 -> Company with ID ${companyId} not found`);
     }
