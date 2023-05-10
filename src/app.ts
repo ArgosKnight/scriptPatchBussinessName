@@ -4,7 +4,7 @@ import { PORT, URL } from './env';
 import { router } from './company.route';
 import bodyParser from 'body-parser';
 
-const url = URL
+const url = URL 
 const port = PORT
 const app: Application = express();
 
@@ -15,7 +15,7 @@ app.use('/api', router)
 export let aricoreDb: any;
 
 async function main() {
-  const client = await MongoClient.connect(url)
+  const client = await MongoClient.connect(url!)
   aricoreDb = client.db('aricore');
   
   app.listen(port, () => {
