@@ -1,11 +1,12 @@
 import { MongoClient } from 'mongodb';
 import express, { Application } from 'express';
-import { PORT, URL } from './env';
+import { PORT, URL, HOST } from './env';
 import { router } from './company.route';
 import bodyParser from 'body-parser';
 
 const url = URL 
 const port = PORT
+const host = HOST
 const app: Application = express();
 
 
@@ -18,8 +19,9 @@ async function main() {
   const client = await MongoClient.connect(url!)
   aricoreDb = client.db('aricore');
   
-  app.listen(port, () => {
+  app.listen(port, host!, () => {
     console.log('PUERTO CONECTAO CORRETACMENTE EN EL PUERTO ---->', port);
   });
+ 
 }
 main()

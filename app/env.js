@@ -23,8 +23,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PORT = exports.URL = void 0;
+exports.HOST = exports.PORT = exports.URL = void 0;
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 exports.URL = process.env.DB_URL;
-exports.PORT = process.env.PORT;
+exports.PORT = parseInt(process.env.PORT ?? '3000');
+exports.HOST = process.env.HOST;

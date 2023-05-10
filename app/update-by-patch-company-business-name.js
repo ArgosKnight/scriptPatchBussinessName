@@ -10,8 +10,10 @@ async function updateCompanyBusinessName(aricoreDb, companyId, businessName) {
         throw new Error(`ERROR 505 -> Company with ID ${companyId} is not active`);
     }
     const result = await aricoreDb.collection('companies').updateOne({ _id: companyId }, { $set: { businessName } });
-    if (result.modifiedCount !== 1) {
-        throw new Error(`ERROR 500 -> Failed to update company with ID ${companyId}`);
-    }
+    // if (result.modifiedCount !== 1) {
+    //   throw new Error(`ERROR 500 -> Failed to update company with ID ${companyId}`);
+    // }
+    console.log(result);
+    return result;
 }
 exports.updateCompanyBusinessName = updateCompanyBusinessName;

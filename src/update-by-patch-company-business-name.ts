@@ -1,7 +1,7 @@
-import { Db } from 'mongodb';
+import { Db, UpdateResult } from 'mongodb';
 import { CompanyData } from './company-data';
 
-export async function updateCompanyBusinessName(aricoreDb: Db, companyId: string, businessName: string): Promise<void> {
+export async function updateCompanyBusinessName(aricoreDb: Db, companyId: string, businessName: string): Promise<UpdateResult> {
   const company = await aricoreDb.collection<CompanyData>('companies').findOne(
     {_id: companyId},
     {projection: {_id: 1, status: 1}}
@@ -17,8 +17,12 @@ export async function updateCompanyBusinessName(aricoreDb: Db, companyId: string
     { _id: companyId },
     { $set: { businessName } },
   );
+
   
-  if (result.modifiedCount !== 1) {
-    throw new Error(`ERROR 500 -> Failed to update company with ID ${companyId}`);
-  }
+  // if (result.modifiedCount !== 1) {
+  //   throw new Error(`ERROR 500 -> Failed to update company with ID ${companyId}`);
+  // }
+  console.log(result)
+
+  return result
 }  
