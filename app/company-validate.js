@@ -8,7 +8,11 @@ const ajvIntance_1 = __importDefault(require("./ajvIntance"));
 const companySchema = {
     type: 'object',
     properties: {
-        businessName: { type: 'string' }
+        businessName: {
+            type: 'string',
+            minLength: 1,
+            pattern: '^[^\\s]+$'
+        }
     },
     required: ['businessName'],
     additionalProperties: false
