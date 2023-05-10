@@ -20,7 +20,7 @@ npm i ajv body-parser dotenv express mongodb
 npm i --save-dev œtypes/express  typescript
 ```
 
-**Tener en cuenta**
+## Tener en cuenta:
 Como ya cuentas con el codigo, lo que debes hacer para 
 iniciar el proeycto e instalar las librerias solo debes usar el siguiente comando:
 ```
