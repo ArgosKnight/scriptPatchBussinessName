@@ -6,7 +6,7 @@ la razon social de una compañia.
 
 ## INSTALAR Y COMO USAR EL PROYECTO
 
-**ISNTALAR EL PROYECTO**
+**INSTALAR EL PROYECTO**
 Iniciamos el proyecto con el siguiente codigo
 ```
 npm install
