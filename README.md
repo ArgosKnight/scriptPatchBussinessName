@@ -30,6 +30,7 @@ npm install
 Al hacer realizar esto ya tienes acceso a todo la funcionalidad del codigo
 
 ## Que hace este codigo:
+
 Como bien su titulo lo dice, lo que buscamos con este codigo es poder realizar y obtimizar la actualizacion de la razon social de una compañia mediante un metodo PATCH
 
 en donde nuestro URL que usaremos en POSTMAN, colocaremos el ID de la compañia  ('companyId')
