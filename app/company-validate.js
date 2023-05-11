@@ -11,15 +11,13 @@ const companySchema = {
         businessName: {
             type: 'string',
             minLength: 1,
-            pattern: '^(?=\\s*\\S).*$'
+            transform: ["trim"]
         }
     },
     required: ['businessName'],
     additionalProperties: false,
-    messages: {
-        businessName: {
-            pattern: 'La razon social no debe empezar o terminar con espacios en blanco'
-        }
+    errorMessage: {
+        minLength: 'El nombre de la empresa debe tener al menos 1 caracter',
     }
 };
 const validateCompany = ajvIntance_1.default.compile(companySchema);
